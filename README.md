@@ -1,1 +1,1 @@
-"# StrongPasswordGenerator" 
+# StrongPasswordGenerator
