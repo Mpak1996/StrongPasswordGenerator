@@ -5,16 +5,19 @@
  */
 package passwordgenerator;
 
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author giann
  */
-public class Home extends javax.swing.JFrame {
+public class Password extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Home() {
+    public Password() {
         initComponents();
     }
 
@@ -36,8 +39,11 @@ public class Home extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        result = new javax.swing.JTextField();
+        Generate = new javax.swing.JButton();
+        chareight = new javax.swing.JRadioButton();
+        charten = new javax.swing.JRadioButton();
+        chartwelve = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -73,11 +79,6 @@ public class Home extends javax.swing.JFrame {
         Password.setForeground(new java.awt.Color(255, 255, 255));
         Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_password_30px.png"))); // NOI18N
         Password.setText("Password");
-        Password.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PasswordMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,7 +105,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
@@ -115,11 +116,33 @@ public class Home extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_copyright_10px_1.png"))); // NOI18N
         jLabel5.setText("Ioannis Bakomichalis 2022");
 
-        jLabel8.setFont(new java.awt.Font("Lucida Handwriting", 2, 14)); // NOI18N
-        jLabel8.setText("The Ultimate");
+        Generate.setBackground(new java.awt.Color(0, 0, 0));
+        Generate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Generate.setForeground(new java.awt.Color(255, 255, 255));
+        Generate.setText("Generate Password");
+        Generate.setBorder(null);
+        Generate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerateActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Lucida Handwriting", 2, 14)); // NOI18N
-        jLabel9.setText("Application");
+        chareight.setBackground(new java.awt.Color(0, 0, 0));
+        chareight.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        chareight.setText("8 Characters");
+
+        charten.setBackground(new java.awt.Color(0, 0, 0));
+        charten.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        charten.setText("10 Characters");
+        charten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chartenActionPerformed(evt);
+            }
+        });
+
+        chartwelve.setBackground(new java.awt.Color(0, 0, 0));
+        chartwelve.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        chartwelve.setText("12 Characters");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,40 +152,50 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(76, 76, 76))
+                                .addGap(63, 63, 63))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(191, 191, 191))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(163, 163, 163))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(97, 97, 97))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(charten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chartwelve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chareight, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(189, 189, 189))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jLabel8)
-                .addGap(46, 46, 46)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(chareight)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(charten)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chartwelve)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -182,17 +215,42 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-        Home a = new Home();
+        Password a = new Password();
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
 
-    private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
-        Password a = new Password();
-        a.setVisible(true);
-        this.dispose();   
-    }//GEN-LAST:event_PasswordMouseClicked
+    private void chartenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chartenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chartenActionPerformed
 
+    private void GenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateActionPerformed
+          int len=8;
+          
+          if (chareight.isSelected()) {
+              passGenerator(8);
+          }
+          else if(charten.isSelected()){
+               passGenerator(10);
+          }
+          else if(chartwelve.isSelected()){
+               passGenerator(12);
+          }
+          else{
+             JOptionPane.showMessageDialog(null,"The password's length should be at least 8 characters","Error",JOptionPane.ERROR_MESSAGE);
+          }
+             
+    }//GEN-LAST:event_GenerateActionPerformed
+
+    public void passGenerator(int len){
+        String character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
+        StringBuilder st = new StringBuilder();
+        Random rand = new Random();
+        while(len-->0){
+            st.append(character.charAt(rand.nextInt(character.length())));
+            result.setText(st.toString());
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -210,35 +268,39 @@ public class Home extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new Password().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Generate;
     private javax.swing.JLabel Home;
     private javax.swing.JLabel Password;
+    private javax.swing.JRadioButton chareight;
+    private javax.swing.JRadioButton charten;
+    private javax.swing.JRadioButton chartwelve;
     private javax.swing.JLabel help;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField result;
     // End of variables declaration//GEN-END:variables
 }
