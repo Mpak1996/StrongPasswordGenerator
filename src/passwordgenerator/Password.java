@@ -215,7 +215,7 @@ public class Password extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-        Password a = new Password();
+        Home a = new Home();
         a.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
@@ -250,6 +250,7 @@ public class Password extends javax.swing.JFrame {
             st.append(character.charAt(rand.nextInt(character.length())));
             result.setText(st.toString());
         }
+        
     }
     /**
      * @param args the command line arguments
