@@ -5,6 +5,8 @@
  */
 package passwordgenerator;
 
+import java.awt.Color;
+
 /**
  *
  * @author giann
@@ -16,6 +18,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        Home.setForeground(Color.blue);
     }
 
     /**
@@ -33,7 +36,7 @@ public class Home extends javax.swing.JFrame {
         Home = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         help = new javax.swing.JLabel();
-        Password = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -69,13 +72,13 @@ public class Home extends javax.swing.JFrame {
         help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_help_30px.png"))); // NOI18N
         help.setText("Help");
 
-        Password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Password.setForeground(new java.awt.Color(255, 255, 255));
-        Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_password_30px.png"))); // NOI18N
-        Password.setText("Password");
-        Password.addMouseListener(new java.awt.event.MouseAdapter() {
+        password.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_password_30px.png"))); // NOI18N
+        password.setText("Password");
+        password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PasswordMouseClicked(evt);
+                passwordMouseClicked(evt);
             }
         });
 
@@ -89,7 +92,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(help)
-                        .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Home)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -101,7 +104,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(help, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -187,11 +190,11 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
 
-    private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
+    private void passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMouseClicked
         Password a = new Password();
         a.setVisible(true);
-        this.dispose();   
-    }//GEN-LAST:event_PasswordMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_passwordMouseClicked
 
     /**
      * @param args the command line arguments
@@ -230,7 +233,6 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Home;
-    private javax.swing.JLabel Password;
     private javax.swing.JLabel help;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -240,5 +242,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel password;
     // End of variables declaration//GEN-END:variables
 }

@@ -124,7 +124,7 @@
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Component id="help" min="-2" max="-2" attributes="0"/>
-                              <Component id="Password" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="password" min="-2" pref="101" max="-2" attributes="0"/>
                               <Component id="Home" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -140,7 +140,7 @@
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="Home" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Password" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="password" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="help" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -194,7 +194,7 @@
                 <Property name="text" type="java.lang.String" value="Help"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Password">
+            <Component class="javax.swing.JLabel" name="password">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Semibold" size="14" style="0"/>
@@ -208,7 +208,7 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PasswordMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="passwordMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>

@@ -5,6 +5,7 @@
  */
 package passwordgenerator;
 
+import java.awt.Color;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -19,6 +20,7 @@ public class Password extends javax.swing.JFrame {
      */
     public Password() {
         initComponents();
+        Password.setForeground(Color.blue);
     }
 
     /**
@@ -30,6 +32,7 @@ public class Password extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JRadioButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -44,6 +47,9 @@ public class Password extends javax.swing.JFrame {
         chareight = new javax.swing.JRadioButton();
         charten = new javax.swing.JRadioButton();
         chartwelve = new javax.swing.JRadioButton();
+        charfour = new javax.swing.JRadioButton();
+        charsix = new javax.swing.JRadioButton();
+        chareighteen = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -79,6 +85,11 @@ public class Password extends javax.swing.JFrame {
         Password.setForeground(new java.awt.Color(255, 255, 255));
         Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/passwordgenerator/icons/icons8_password_30px.png"))); // NOI18N
         Password.setText("Password");
+        Password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PasswordMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -128,10 +139,12 @@ public class Password extends javax.swing.JFrame {
         });
 
         chareight.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(chareight);
         chareight.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         chareight.setText("8 Characters");
 
         charten.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(charten);
         charten.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         charten.setText("10 Characters");
         charten.addActionListener(new java.awt.event.ActionListener() {
@@ -141,8 +154,29 @@ public class Password extends javax.swing.JFrame {
         });
 
         chartwelve.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(chartwelve);
         chartwelve.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         chartwelve.setText("12 Characters");
+
+        charfour.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(charfour);
+        charfour.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        charfour.setText("14 Characters");
+
+        charsix.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(charsix);
+        charsix.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        charsix.setText("16 Characters");
+        charsix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                charsixActionPerformed(evt);
+            }
+        });
+
+        chareighteen.setBackground(new java.awt.Color(0, 0, 0));
+        JRadioButtonGroup.add(chareighteen);
+        chareighteen.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        chareighteen.setText("18 Characters");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,17 +199,22 @@ public class Password extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(63, 63, 63))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(163, 163, 163))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(97, 97, 97))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(163, 163, 163))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(charten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(chartwelve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(chareight, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(189, 189, 189))))))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(charsix, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(chareighteen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(charfour, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(128, 128, 128))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,12 +226,20 @@ public class Password extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(chareight)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(charten)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chartwelve)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(chareight)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(charten)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chartwelve))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(charfour)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(charsix)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chareighteen)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Generate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -225,16 +272,31 @@ public class Password extends javax.swing.JFrame {
     }//GEN-LAST:event_chartenActionPerformed
 
     private void GenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerateActionPerformed
-          int len=8;
           
           if (chareight.isSelected()) {
               passGenerator(8);
+              chareight.setSelected(false);
           }
           else if(charten.isSelected()){
                passGenerator(10);
+               charten.setSelected(false);
+
           }
           else if(chartwelve.isSelected()){
                passGenerator(12);
+               chartwelve.setSelected(false);
+          }
+          else if(charfour.isSelected()){
+               passGenerator(14);
+               charfour.setSelected(false);
+          }
+          else if(charsix.isSelected()){
+               passGenerator(16);
+               charsix.setSelected(false);
+          }
+          else if(chareighteen.isSelected()){
+               passGenerator(18);
+               chareighteen.setSelected(false);
           }
           else{
              JOptionPane.showMessageDialog(null,"The password's length should be at least 8 characters","Error",JOptionPane.ERROR_MESSAGE);
@@ -242,13 +304,26 @@ public class Password extends javax.swing.JFrame {
              
     }//GEN-LAST:event_GenerateActionPerformed
 
+    private void charsixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_charsixActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_charsixActionPerformed
+
+    private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
+            Password.setForeground(Color.blue);
+    }//GEN-LAST:event_PasswordMouseClicked
+
     public void passGenerator(int len){
-        String character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
+        String lower="abcdefghijklmnopqrstuvwxyz";
+        String upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String num="1234567890";
+        String specialCharacters="!@#$%^&*";
+        
+        String combo= lower+upper+num+specialCharacters;
         StringBuilder st = new StringBuilder();
         Random rand = new Random();
         while(len-->0){
-            st.append(character.charAt(rand.nextInt(character.length())));
-            result.setText(st.toString());
+            st.append(combo.charAt(rand.nextInt(combo.length())));
+            result.setText(st.toString());  
         }
         
     }
@@ -291,8 +366,12 @@ public class Password extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Generate;
     private javax.swing.JLabel Home;
+    private javax.swing.ButtonGroup JRadioButtonGroup;
     private javax.swing.JLabel Password;
     private javax.swing.JRadioButton chareight;
+    private javax.swing.JRadioButton chareighteen;
+    private javax.swing.JRadioButton charfour;
+    private javax.swing.JRadioButton charsix;
     private javax.swing.JRadioButton charten;
     private javax.swing.JRadioButton chartwelve;
     private javax.swing.JLabel help;
