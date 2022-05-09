@@ -6,6 +6,7 @@
 package passwordgenerator;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Help extends javax.swing.JFrame {
     public Help() {
         initComponents();
         help.setForeground(Color.blue);
+        setIconImage();
     }
 
     /**
@@ -260,4 +262,8 @@ public class Help extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel password;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage() {
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/passwordgenerator/icons/icons8_security_shield_green_30px_1.png")));
+    }
 }

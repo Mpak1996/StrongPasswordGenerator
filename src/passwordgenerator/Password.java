@@ -6,6 +6,7 @@
 package passwordgenerator;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,7 @@ public class Password extends javax.swing.JFrame {
     public Password() {
         initComponents();
         Password.setForeground(Color.blue);
+        setIconImage();
     }
 
     /**
@@ -164,7 +166,7 @@ public class Password extends javax.swing.JFrame {
 
         charteighteen.setBackground(new java.awt.Color(0, 0, 0));
         charteighteen.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        charteighteen.setText("12 Characters");
+        charteighteen.setText("18 Characters");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -284,7 +286,7 @@ public class Password extends javax.swing.JFrame {
                charteighteen.setSelected(false);
           }
           else{
-             JOptionPane.showMessageDialog(null,"The password's length should be at least 8 characters","Error",JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null,"Password's length is blank, select one!","Error",JOptionPane.ERROR_MESSAGE);
           }
              
     }//GEN-LAST:event_GenerateActionPerformed
@@ -365,4 +367,8 @@ public class Password extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField result;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage() {
+         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/passwordgenerator/icons/icons8_security_shield_green_30px_1.png")));
+    }
 }
